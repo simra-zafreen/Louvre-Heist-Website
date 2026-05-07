@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="assets/CSS/style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Contact</title>
+</head>
+<body id="page4-body">
+	<header>
+		<nav class="right-navigation-bar">
+            <div class="hamburger">&#9776;</div>
+			<ul class="navigation">
+				<li><a href="index.html">Home</a></li>
+				<li><a href="page2.html">The Process</a></li>
+				<li><a href="page3.html">The Loot</a></li>
+			</ul>
+		</nav>
+	</header>
+	<div class="container">
+		<section id="contact" class="section-content-contacts">
+			<h1 class="page4-and-references-h1">Contact Us</h1>
+			<div class="contact-info">
+				<h2 id="page4-h2">Get In Touch</h2>
+				<p style="color: var(--color-black1);">Questions, comments, or theories about the Louvre heist? Let us know.</p>
+				<p class="contact-email">louvreheist@gmail.com</p>
+			</div>
+			<form class="contact-form">
+				<div class="form">
+					<label for="name">Full Name *</label>
+					<input type="text" id="name" required>
+				</div>
+				<div class="form">
+					<label for="email">Email Address *</label>
+					<input type="email" id="email" required>
+				</div>
+				<div class="form">
+					<label for="phone">Phone Number *</label>
+					<input type="tel" id="phone" required>
+				</div>
+				<div class="form">
+					<label for="reason">Reason for Contact *</label>
+					<select id="reason" required>
+						<option value="">Select one...</option>
+						<option value="tip">Submit a tip</option>
+						<option value="question">General question</option>
+						<option value="feedback">Website feedback</option>
+					</select>
+				</div>
+				<div class="form">
+					<label for="message">Your Message *</label>
+					<textarea id="message" required></textarea>
+				</div>
+				<button type="submit" class="submit-btn">Send Message</button>
+			</form>
+		</section>
+	</div>
+	<footer class="main-footer">
+		<div class="footer-left">
+			<p>&copy; Louvre Heist 2025</p>
+		</div>
+		<div class="footer-right">
+			<a href="page4.html">Contact us</a>
+			<a href="references.html">References</a>
+		</div>
+	</footer>
+	<script>
+		let lastScroll = 0;
+        const header = document.querySelector("header");
+
+        // Hide header on first load
+
+
+        window.addEventListener("scroll", () => {
+            let currentScroll = window.pageYOffset;
+
+            if (currentScroll < lastScroll) {
+                // scrolling UP → show navbar
+                header.classList.add("show");
+
+            } else {
+                // scrolling DOWN → hide navbar
+                header.classList.remove("show");
+            }
+            lastScroll = currentScroll;
+		});
+		document.addEventListener("DOMContentLoaded", () => {
+            const hamburger = document.querySelector(".hamburger");
+            const navMenu = document.querySelector(".navigation");
+            hamburger.addEventListener("click", () => {
+                navMenu.classList.toggle("open"); // Toggles the .open class
+            });
+		});
+	</script>
+</body>
+</html>
